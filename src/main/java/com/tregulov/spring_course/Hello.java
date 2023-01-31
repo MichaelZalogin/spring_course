@@ -1,7 +1,13 @@
 package com.tregulov.spring_course;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class Hello {
     public static void main(String[] args) {
-        System.out.print("hello World");
+        var context = new ClassPathXmlApplicationContext(
+                "applicationContext.xml");
+        Pet pet = context.getBean("MyPet", Pet.class);
+        pet.say();
+        context.close();
     }
 }
