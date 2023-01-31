@@ -1,4 +1,4 @@
-package com.tregulov.spring_course;
+package com.tregulov.spring_course.ioc_di;
 
 public class Dog implements Pet {
     @Override
