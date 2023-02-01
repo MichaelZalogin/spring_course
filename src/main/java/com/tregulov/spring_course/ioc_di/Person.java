@@ -1,11 +1,18 @@
 package com.tregulov.spring_course.ioc_di;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component("anythingPerson")
 public class Person {
-
+    @Autowired
     private Pet pet;
-
+    @Value("${person.surname}")
     private String surname;
-
+    @Value("${person.age}")
     private int age;
 
     public Pet getPet() {
@@ -35,5 +42,13 @@ public class Person {
     public void callYouPet() {
         System.out.println("Hello my pet");
         pet.say();
+    }
+    @PostConstruct
+    public void personInit() {
+        System.out.println("run init method");
+    }
+    @PreDestroy
+    public void personDestroy() {
+        System.out.println("run destroy method");
     }
 }
