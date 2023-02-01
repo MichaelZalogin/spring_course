@@ -3,7 +3,7 @@ package com.tregulov.spring_course.ioc_di;
 public class Person {
     private Pet pet;
 
-    public Person(Pet pet) {
+    public void setPet(Pet pet) {
         this.pet = pet;
     }
 
