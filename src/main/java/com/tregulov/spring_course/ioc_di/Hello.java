@@ -10,6 +10,8 @@ public class Hello {
         pet.say();
         Person person = context.getBean("myPerson", Person.class);
         person.callYouPet();
+        System.out.println(person.getAge());
+        System.out.println(person.getSurname());
         context.close();
     }
 }

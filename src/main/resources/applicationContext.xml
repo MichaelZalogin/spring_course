@@ -7,12 +7,14 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id = "myPet"
+    <bean id="myPet"
           class="com.tregulov.spring_course.ioc_di.Cat"></bean>
 
-    <bean id = "myPerson"
+    <bean id="myPerson"
           class="com.tregulov.spring_course.ioc_di.Person">
         <property name="pet" ref="myPet"/>
+        <property name="surname" value="Ivanov"/>
+        <property name="age" value="33"/>
     </bean>
 
 </beans>
